@@ -1,3 +1,7 @@
+🌐 **Languages:** [Français](README.md) · [English](README_EN.md)
+
+---
+
 # NeoMundi ControlTower
 
 ## Control, Traceability and Contribution to EU AI Act and GDPR Compliance Efforts
