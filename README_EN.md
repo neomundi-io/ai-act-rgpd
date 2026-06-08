@@ -180,7 +180,7 @@ ControlTower’s privacy-first architecture directly contributes to several GDPR
 | Data minimisation                        | Transmission limited to what is strictly necessary depending on the selected mode | Covered by architecture |
 | Data protection by design                | OBS and GOV modes designed to limit content exposure                              | Covered by architecture |
 | Storage limitation                       | Zero content retention, zero content logging, zero content storage                | Covered by architecture |
-| Accountability                           | Technical artefacts supporting demonstration of implemented controls              | Direct contribution     |
+| Responsabilité                          | Technical artefacts supporting demonstration of implemented controls              | Direct contribution     |
 | Control traceability                     | Signals, scores and configurable history                                          | Technically covered     |
 | Processing documentation                 | Technical elements that can be used by the organisation                           | Partial contribution    |
 | Record of processing activities          | Organisational document maintained by the data controller                         | Out of scope            |
