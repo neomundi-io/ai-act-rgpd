@@ -1,3 +1,7 @@
+🌐 **Langues :** [Français](README.md) · [English](README_EN.md)
+
+---
+
 # NeoMundi ControlTower
 
 ## Contrôle, traçabilité et contribution aux démarches IA Act et RGPD
