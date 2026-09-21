@@ -1,442 +1,467 @@
-🌐 **Languages:** [Français](README.md) · [English](README_EN.md)
-
----
-
 # NeoMundi ControlTower
 
-## Runtime Evidence, Continuous Monitoring and Traceability for AI Governance
+[🇬🇧 English](./README.md) · [🇫🇷 Français](./README_FR.md) ·
+[NeoMundi](https://neomundi.io) ·
+[Créer un compte](https://controltower.neomundi.io/welcome)
 
-NeoMundi ControlTower is a diagnostic, continuous-monitoring and traceability layer for AI-generated responses.
+## Preuve en exploitation, surveillance continue et traçabilité pour la gouvernance de l’IA
 
-It helps organisations observe behavioural signals during operation, detect measurable drift or regime changes, document risk indicators, apply configurable governance mechanisms and maintain technical evidence of the controls that were available and used.
+NeoMundi ControlTower aide les organisations à observer le comportement des réponses générées par des systèmes d’IA en production, à détecter des dérives et des changements de régime mesurables, à documenter les signaux de risque, à appliquer des mécanismes de gouvernance configurables et à conserver des preuves techniques auditables.
 
-ControlTower is designed privacy-first. It can be integrated through a simple API call, without requiring a change to the underlying AI infrastructure, and may be deployed in sovereign environments depending on the selected deployment model.
+**Une intégration API · Signaux runtime continus · Gouvernance configurable · Preuves auditables**
 
-This document explains:
+ControlTower est conçu selon une approche *privacy-first*. Il peut être intégré par un simple appel API, sans remplacer l’infrastructure IA sous-jacente, et peut prendre en charge des modèles de déploiement souverains selon l’architecture retenue.
 
-1. what ControlTower technically covers today;
-2. how those capabilities may support an organisation’s EU AI Act and GDPR compliance process;
-3. what remains outside NeoMundi’s scope and under the responsibility of each organisation.
+### Commencer avec ControlTower
 
-> **Important:** NeoMundi does not determine whether an AI system is legally compliant.
-> It provides a runtime evidence layer that helps organisations observe behavioural drift, document risk signals, trigger appropriate human review and demonstrate that operational controls existed when they were needed.
+1. **Créez votre compte et votre clé API**  
+   [Ouvrir NeoMundi ControlTower →](https://controltower.neomundi.io/welcome)
 
----
+2. **Connectez votre système d’IA**  
+   Intégrez l’API NeoMundi en suivant la documentation et en sélectionnant le mode de déploiement adapté à votre environnement.
 
-# 1. What ControlTower actually covers
+3. **Observez et gouvernez**  
+   Recevez les mesures runtime, configurez les règles de surveillance et d’escalade, puis conservez une preuve traçable des contrôles disponibles et appliqués.
 
-## 1.1. Operational traceability of observed AI responses
+Ce document présente :
 
-ControlTower associates observed AI-response events with technical and operational artefacts that may include:
+1. ce que ControlTower couvre techniquement aujourd’hui ;
+2. comment ces capacités peuvent contribuer au processus de conformité d’une organisation au regard de l’AI Act européen et du RGPD ;
+3. ce qui reste en dehors du périmètre de NeoMundi et relève de la responsabilité de chaque organisation.
 
-* an observation identifier;
-* calculated metrics;
-* measured risk signals;
-* a configurable governance or control status;
-* observation timestamps;
-* configurable measurement history;
-* traceability artefacts adapted to the selected deployment mode;
-* justification elements associated with configured rules or actions.
-
-These artefacts make it possible to connect an observed response pattern with the technical signals and control context available at the time of observation.
-
-### Covered capability
-
-**Technical and operational traceability of observed AI-response behaviour and associated risk signals.**
+> **Important :** NeoMundi ne détermine pas si un système d’IA est juridiquement conforme.
+> Il fournit une couche de preuve en exploitation qui aide les organisations à observer les dérives comportementales, documenter les signaux de risque, déclencher une revue humaine adaptée et démontrer que des contrôles opérationnels existaient lorsqu’ils étaient nécessaires.
 
 ---
 
-## 1.2. Continuous monitoring of AI-response behaviour
+# 1. Ce que ControlTower couvre réellement
 
-ControlTower continuously observes signals associated with the behaviour of AI systems during operation.
+## 1.1. Traçabilité opérationnelle des réponses IA observées
 
-Depending on the enabled modules and selected configuration, these signals may include:
+ControlTower associe les événements observés liés aux réponses d’IA à des artefacts techniques et opérationnels pouvant inclure :
 
-* stability;
-* coherence;
-* semantic variation;
-* behavioural drift;
-* hallucination-risk indicators;
-* factual-risk indicators;
-* factual-validity-related signals where the relevant module is enabled;
-* latency, execution or operational indicators;
-* configurable risk signals associated with generated responses.
+* un identifiant d’observation ;
+* des métriques calculées ;
+* des signaux de risque mesurés ;
+* un statut de gouvernance ou de contrôle configurable ;
+* des horodatages d’observation ;
+* un historique de mesure configurable ;
+* des artefacts de traçabilité adaptés au mode de déploiement sélectionné ;
+* des éléments de justification associés aux règles ou actions configurées.
 
-The objective is not to claim that every signal establishes truth or error on its own.
+Ces artefacts permettent de relier un comportement observé à des signaux techniques et à un contexte de contrôle disponibles au moment de l’observation.
 
-The objective is to make observable when a system’s measured behaviour changes, becomes fragile, exceeds a defined threshold or requires additional review.
+### Capacité couverte
 
-### Covered capability
-
-**Continuous monitoring of AI-response behaviour, variation and measurable operational risk signals.**
+**Traçabilité technique et opérationnelle du comportement observé des réponses IA et des signaux de risque associés.**
 
 ---
 
-## 1.3. Detection of behavioural drift and silent regime changes
+## 1.2. Surveillance continue du comportement des réponses IA
 
-ControlTower can help identify measurable changes in an AI system’s behaviour across time.
+ControlTower observe en continu des signaux associés au comportement des systèmes d’IA pendant leur fonctionnement.
 
-A behavioural change may appear even when:
+Selon les modules activés et la configuration retenue, ces signaux peuvent inclure :
 
-* no public provider update has been announced;
-* no visible production incident has yet been reported;
-* a one-off benchmark remains broadly reassuring;
-* conventional quality snapshots do not reveal the change.
+* la stabilité ;
+* la cohérence ;
+* la variation sémantique ;
+* la dérive comportementale ;
+* des indicateurs de risque d’hallucination ;
+* des indicateurs de risque factuel ;
+* des signaux liés à la validité factuelle lorsque le module concerné est activé ;
+* des indicateurs de latence, d’exécution ou d’exploitation ;
+* des signaux de risque configurables associés aux réponses générées.
 
-Such observations may include changes in factual-risk signals, semantic variation, stability patterns or other monitored indicators.
+L’objectif n’est pas d’affirmer qu’un signal établit, à lui seul, la vérité ou l’erreur d’une réponse.
 
-ControlTower does not attribute the cause of a detected behavioural change unless an independent investigation establishes it.
+L’objectif est de rendre observable le moment où le comportement mesuré d’un système évolue, devient fragile, dépasse un seuil défini ou nécessite une revue complémentaire.
 
-A detected signal is an operational observation. It is not, by itself, proof of a provider change, a system defect, a legal breach or a root cause.
+### Capacité couverte
 
-### Covered capability
-
-**Detection and traceability of measurable behavioural drift and silent regime changes during operation.**
-
----
-
-## 1.4. Configurable governance and control mechanisms
-
-ControlTower can support configurable governance mechanisms that are applied in real time or near real time, depending on the selected integration.
-
-These mechanisms may include:
-
-* risk thresholds;
-* alerts;
-* escalation paths;
-* routing to human review;
-* differentiated treatment of higher-risk responses;
-* configurable blocking or hold mechanisms where supported by the chosen integration;
-* observation and decision logs;
-* audit of rule application and measurement history.
-
-ControlTower does not silently transform an observed signal into an authorised action.
-
-A measurement signal may support awareness, review or escalation, but the authority to act remains defined by the organisation’s governance rules, responsible roles and selected integration.
-
-### Covered capability
-
-**Continuous monitoring and configurable control mechanisms for AI-response risk.**
+**Surveillance continue du comportement des réponses IA, de leur variabilité et de signaux de risque opérationnels mesurables.**
 
 ---
 
-## 1.5. Human-oversight support
+## 1.3. Détection des dérives comportementales et des changements de régime silencieux
 
-ControlTower can support human oversight by making relevant runtime signals visible and actionable.
+ControlTower peut aider à identifier des évolutions mesurables du comportement d’un système d’IA dans le temps.
 
-Depending on configuration, the platform may help organisations:
+Un changement comportemental peut apparaître même lorsque :
 
-* define thresholds requiring review;
-* notify responsible teams;
-* escalate higher-risk observations;
-* route events to a designated reviewer;
-* preserve evidence of the observation and the control context;
-* distinguish between an observed signal and an authorised downstream decision.
+* aucune mise à jour publique du fournisseur n’a été annoncée ;
+* aucun incident visible en production n’a encore été signalé ;
+* un benchmark ponctuel demeure globalement rassurant ;
+* des instantanés de qualité conventionnels ne révèlent pas ce changement.
 
-The platform provides technical support for human oversight. It does not replace human judgment, organisational accountability or legal responsibility.
+Ces observations peuvent notamment concerner des évolutions de signaux de risque factuel, de variation sémantique, de stabilité ou d’autres indicateurs suivis.
 
-### Covered capability
+ControlTower n’attribue pas la cause d’un changement comportemental détecté, sauf lorsqu’une investigation indépendante permet de l’établir.
 
-**Technical support for risk-based human oversight, review and escalation.**
+Un signal détecté constitue une observation opérationnelle. Il ne constitue pas, à lui seul, la preuve d’un changement de fournisseur, d’un défaut système, d’un manquement juridique ou d’une cause racine.
 
----
+### Capacité couverte
 
-## 1.6. Auditability and runtime evidence
-
-ControlTower produces measurable and reviewable technical elements that may include:
-
-* metrics;
-* scores;
-* risk signals;
-* observation identifiers;
-* configurable history;
-* measurement artefacts;
-* rule-application artefacts;
-* justification elements;
-* technical evidence associated with observed events.
-
-These elements may be used to support internal audit, incident analysis, operational review, governance reporting or third-party assurance processes.
-
-### Covered capability
-
-**Auditability of observed AI-response behaviour, measured signals and configured control mechanisms.**
+**Détection et traçabilité de dérives comportementales mesurables et de changements de régime silencieux en exploitation.**
 
 ---
 
-## 1.7. Evidence-based operational governance
+## 1.4. Mécanismes configurables de gouvernance et de contrôle
 
-ControlTower does not rely solely on a declarative claim that an AI system is reliable.
+ControlTower peut prendre en charge des mécanismes de gouvernance configurables, appliqués en temps réel ou quasi temps réel selon l’intégration choisie.
 
-It provides measured, traceable and configurable signals that can help organisations make their governance processes more explicit.
+Ces mécanismes peuvent inclure :
 
-For example, an organisation may use ControlTower to document that:
+* des seuils de risque ;
+* des alertes ;
+* des parcours d’escalade ;
+* l’orientation vers une revue humaine ;
+* un traitement différencié des réponses à risque plus élevé ;
+* des mécanismes configurables de blocage ou de mise en attente, lorsque l’intégration retenue le permet ;
+* des journaux d’observation et de décision ;
+* l’audit de l’application des règles et de l’historique de mesure.
 
-* an observation was detected;
-* a risk signal crossed a configured threshold;
-* a responsible role was notified;
-* a human review was requested;
-* a defined control mechanism was available or applied;
-* the final downstream decision remained subject to organisational authority.
+ControlTower ne transforme pas silencieusement un signal observé en action autorisée.
 
-### Covered capability
+Un signal de mesure peut justifier une information, une revue ou une escalade, mais l’autorité d’agir demeure définie par les règles de gouvernance de l’organisation, les rôles responsables et l’intégration retenue.
 
-**Operational governance supported by measured and traceable runtime evidence.**
+### Capacité couverte
 
----
-
-# 2. Privacy-first architecture
-
-ControlTower is designed around privacy-first principles.
-
-Depending on the selected deployment mode and configuration, the architecture is designed to minimise content exposure and limit data processing to what is necessary for measurement, monitoring and configured governance mechanisms.
-
-Core principles include:
-
-* zero content retention;
-* zero content logging;
-* zero content storage;
-* data minimisation;
-* configurable traceability;
-* deployment flexibility, including sovereign deployment models where available.
-
-Prompt and response content is not retained, indexed, reused or stored by NeoMundi.
-
-Minimal technical measurement and traceability artefacts may remain available according to the selected mode, configuration and deployment model.
+**Surveillance continue et mécanismes configurables de contrôle du risque lié aux réponses IA.**
 
 ---
 
-## 2.1. OBS mode
+## 1.5. Support à la supervision humaine
 
-In OBS mode, NeoMundi receives only the technical elements necessary for observation.
+ControlTower peut soutenir la supervision humaine en rendant les signaux pertinents en exploitation visibles et exploitables.
 
-This may include:
+Selon la configuration, la plateforme peut aider les organisations à :
 
-* normalised metrics;
-* technical observation artefacts;
-* identifiers or pseudonymous references required for configured traceability;
-* aggregated or non-content operational signals.
+* définir des seuils nécessitant une revue ;
+* notifier les équipes responsables ;
+* escalader les observations présentant un risque plus élevé ;
+* orienter les événements vers un relecteur désigné ;
+* conserver la preuve de l’observation et de son contexte de contrôle ;
+* distinguer un signal observé d’une décision aval autorisée.
 
-NeoMundi does not receive:
+La plateforme fournit un support technique à la supervision humaine. Elle ne remplace ni le jugement humain, ni la responsabilité organisationnelle, ni la responsabilité juridique.
 
-* raw prompts;
-* raw responses;
-* stored semantic content from exchanges;
-* customer content for reuse or indexing.
+### Capacité couverte
 
-### Covered capability
-
-**Risk observation and technical traceability without transmission or retention of prompt and response content.**
+**Support technique à une supervision humaine, une revue et une escalade fondées sur le risque.**
 
 ---
 
-## 2.2. GOV mode
+## 1.6. Auditabilité et preuve en exploitation
 
-In GOV mode, data may transit in real time solely for measurement and configured governance-rule enforcement purposes.
+ControlTower produit des éléments techniques mesurables et vérifiables pouvant inclure :
 
-Content is:
+* des métriques ;
+* des scores ;
+* des signaux de risque ;
+* des identifiants d’observation ;
+* un historique configurable ;
+* des artefacts de mesure ;
+* des artefacts d’application des règles ;
+* des éléments de justification ;
+* des preuves techniques associées aux événements observés.
 
-* not retained;
-* not indexed;
-* not reused;
-* not stored.
+Ces éléments peuvent être utilisés pour soutenir un audit interne, une analyse d’incident, une revue opérationnelle, un reporting de gouvernance ou des démarches d’assurance par des tiers.
 
-The precise behaviour of GOV mode depends on the selected integration, deployment model and organisational configuration.
+### Capacité couverte
 
-### Covered capability
-
-**Real-time measurement and configurable governance mechanisms without content retention.**
-
----
-
-## 2.3. Sovereign deployment options
-
-ControlTower may be deployed according to a sovereign or controlled infrastructure model, depending on the selected deployment architecture.
-
-This can support organisations that require:
-
-* controlled hosting environments;
-* data-location constraints;
-* infrastructure sovereignty;
-* integration with trusted cloud or on-premise environments;
-* reduced exposure of operational AI data.
-
-### Covered capability
-
-**Deployment flexibility for organisations with sovereignty, security or infrastructure-control requirements.**
+**Auditabilité du comportement observé des réponses IA, des signaux mesurés et des mécanismes de contrôle configurés.**
 
 ---
 
-# 3. How ControlTower may support an EU AI Act compliance process
+## 1.7. Gouvernance opérationnelle fondée sur des preuves
 
-ControlTower does not replace legal analysis, conformity assessment, organisational governance or regulatory certification.
+ControlTower ne repose pas uniquement sur une promesse déclarative de fiabilité d’un système d’IA.
 
-However, it provides technical capabilities and runtime evidence that may support several operational areas relevant to an EU AI Act compliance process.
+Il fournit des signaux mesurés, traçables et configurables qui peuvent aider les organisations à rendre leurs processus de gouvernance plus explicites.
 
-The applicability of those areas depends on the AI system concerned, its intended purpose, the organisation’s role, the risk classification of the system and the specific use case.
+Par exemple, une organisation peut utiliser ControlTower pour documenter que :
 
-| Operational area                              | ControlTower contribution                                                                         | Coverage status                                        |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Monitoring during operation                   | Continuous observation of AI-response behaviour, variation and configured risk signals            | Technically supported                                  |
-| Risk-management support                       | Measured scores, risk signals, thresholds, alerts and escalation mechanisms                       | Technically supported                                  |
-| Operational traceability                      | Observation identifiers, metrics, timestamps and configurable measurement artefacts               | Technically supported                                  |
-| Logging support                               | Configurable technical history and traceability artefacts without content retention               | Supported depending on configuration                   |
-| Human-oversight support                       | Alerts, escalation paths, routing to human review and visibility of measured signals              | Technical capability provided                          |
-| Treatment of higher-risk responses            | Differentiated handling, review, hold or blocking mechanisms depending on integration             | Technical capability provided depending on integration |
-| Auditability                                  | Measured signals, technical artefacts and justification elements                                  | Technically supported                                  |
-| Incident analysis and documentation           | Runtime evidence that may support analysis, investigation and documentation of operational events | Direct operational contribution                        |
-| Post-deployment monitoring                    | Longitudinal observation of system behaviour, drift and measurable regime changes                 | Direct operational contribution                        |
-| Transparency of operational controls          | Visibility into observed signals, configured thresholds and applied control context               | Direct operational contribution                        |
-| Complete legal classification of an AI system | Depends on intended purpose, use case, organisational role and legal assessment                   | Out of scope                                           |
-| Formal conformity assessment                  | Requires the applicable legal, organisational and technical assessment process                    | Out of scope                                           |
-| Regulatory certification                      | Requires the relevant legal and certification process                                             | Out of scope                                           |
+* une observation a été détectée ;
+* un signal de risque a franchi un seuil configuré ;
+* un rôle responsable a été notifié ;
+* une revue humaine a été demandée ;
+* un mécanisme de contrôle défini était disponible ou a été appliqué ;
+* la décision aval finale est restée soumise à l’autorité de l’organisation.
+
+### Capacité couverte
+
+**Gouvernance opérationnelle soutenue par des preuves mesurées et traçables en exploitation.**
 
 ---
 
-## 3.1. Runtime evidence for post-deployment monitoring
+# 2. Architecture privacy-first
 
-A central contribution of ControlTower is the ability to create a longitudinal record of observed AI-system behaviour during operation.
+ControlTower est conçu selon des principes de protection des données dès la conception.
 
-This may help organisations identify:
+Selon le mode de déploiement et la configuration sélectionnés, son architecture vise à minimiser l’exposition au contenu et à limiter le traitement aux données nécessaires à la mesure, à la surveillance et aux mécanismes de gouvernance configurés.
 
-* unexpected variation;
-* increased factual-risk signals;
-* changes in semantic behaviour;
-* degradation of observed stability;
-* changes in risk distribution;
-* silent regime changes;
-* patterns that merit review before they become visible through traditional incident reporting.
+Les principes structurants incluent :
 
-ControlTower does not replace incident investigation.
+* zéro rétention de contenu ;
+* zéro journalisation de contenu ;
+* zéro stockage de contenu ;
+* minimisation des données ;
+* traçabilité configurable ;
+* flexibilité de déploiement, y compris des modèles de déploiement souverains lorsque disponibles.
 
-It helps establish that an operational signal was observed, measured and documented at a given time, under a defined measurement and governance context.
+Les contenus des prompts et des réponses ne sont ni conservés, ni indexés, ni réutilisés, ni stockés par NeoMundi.
 
----
-
-## 3.2. The distinction between measurement and authorisation
-
-ControlTower is designed around an important governance distinction:
-
-> **A runtime measurement signal is not, by itself, an authorisation to act.**
-
-A measured signal may justify:
-
-* internal awareness;
-* further investigation;
-* human review;
-* a recommendation;
-* escalation;
-* a configured safety response.
-
-Whether it may justify a downstream action depends on the organisation’s own governance model, responsible authority, use case and applicable controls.
-
-This distinction helps prevent an observed technical signal from being silently treated as a final decision.
+Des artefacts techniques minimaux de mesure et de traçabilité peuvent rester disponibles selon le mode sélectionné, la configuration et le modèle de déploiement retenu.
 
 ---
 
-# 4. How ControlTower may support a GDPR compliance process
+## 2.1. Mode OBS
 
-ControlTower is designed to support privacy-first processing principles.
+En mode OBS, NeoMundi reçoit uniquement les éléments techniques nécessaires à l’observation.
 
-It does not replace a complete GDPR assessment, a record of processing activities, a Data Protection Impact Assessment or the legal responsibility of the controller or processor.
+Cela peut inclure :
 
-However, the architecture may provide technical support for several GDPR-related operational principles.
+* des métriques normalisées ;
+* des artefacts techniques d’observation ;
+* des identifiants ou références pseudonymes requis pour la traçabilité configurée ;
+* des signaux opérationnels agrégés ou non liés au contenu.
 
-| GDPR-related area                 | ControlTower contribution                                                                  | Coverage status                 |
-| --------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------- |
-| Data minimisation                 | Data transmission limited to what is necessary for the selected mode and technical purpose | Supported by architecture       |
-| Data protection by design         | OBS and GOV modes designed to minimise content exposure and avoid content retention        | Supported by architecture       |
-| Storage limitation                | No retention, logging or storage of prompt and response content by NeoMundi                | Supported by architecture       |
-| Accountability support            | Technical artefacts that may help document implemented monitoring and control mechanisms   | Direct operational contribution |
-| Control traceability              | Signals, metrics, identifiers and configurable technical history                           | Technically supported           |
-| Processing documentation support  | Technical elements that may contribute to organisational documentation                     | Partial contribution            |
-| Record of processing activities   | Organisational and legal document maintained by the relevant controller or processor       | Out of scope                    |
-| Data Protection Impact Assessment | Legal and organisational assessment performed where required                               | Out of scope                    |
-| Legal basis determination         | Depends on the organisation’s processing context and legal assessment                      | Out of scope                    |
-| Data-subject rights management    | Requires organisational procedures and systems beyond ControlTower                         | Out of scope                    |
+NeoMundi ne reçoit pas :
 
----
+* les prompts bruts ;
+* les réponses brutes ;
+* le contenu sémantique stocké des échanges ;
+* du contenu client destiné à être réutilisé ou indexé.
 
-# 5. What ControlTower does not cover
+### Capacité couverte
 
-NeoMundi does not replace an organisation’s legal, organisational, security or governance responsibilities.
-
-ControlTower does not provide:
-
-* complete legal classification of an AI system under the EU AI Act;
-* legal advice;
-* legal analysis of a specific use case;
-* automatic confirmation of regulatory compliance;
-* preparation of an organisation’s GDPR record of processing activities;
-* completion of a Data Protection Impact Assessment;
-* an organisation’s internal AI policy;
-* HR governance;
-* contractual compliance management;
-* complete supplier qualification;
-* Shadow AI mapping;
-* a global cybersecurity audit;
-* formal conformity assessment;
-* regulatory certification;
-* root-cause attribution for an observed behavioural change;
-* proof that a single response is true, false, safe or compliant solely from one measurement signal;
-* replacement of human judgment or accountable organisational authority.
+**Observation du risque et traçabilité technique sans transmission ni rétention du contenu des prompts et des réponses.**
 
 ---
 
-# 6. Summary positioning
+## 2.2. Mode GOV
 
-**NeoMundi ControlTower is a runtime evidence, continuous-monitoring and traceability layer for AI-generated responses.**
+En mode GOV, des données peuvent transiter en temps réel uniquement à des fins de mesure et d’application de règles de gouvernance configurées.
 
-It helps organisations:
+Le contenu :
 
-* observe AI-response behaviour during operation;
-* detect measurable drift and silent regime changes;
-* document risk signals and technical context;
-* support human oversight and escalation;
-* apply configurable control mechanisms;
-* maintain auditable operational evidence;
-* reduce content exposure through privacy-first architecture;
-* support, but not replace, AI Act and GDPR compliance processes.
+* n’est pas retenu ;
+* n’est pas indexé ;
+* n’est pas réutilisé ;
+* n’est pas stocké.
 
-NeoMundi does not claim to determine whether an AI system is legally compliant.
+Le fonctionnement précis du mode GOV dépend de l’intégration retenue, du modèle de déploiement et de la configuration de l’organisation.
 
-It provides the operational evidence layer that helps organisations understand what their AI systems were doing in production, what signals were observed, what controls were available and what governance response was triggered.
+### Capacité couverte
+
+**Mesure en temps réel et mécanismes de gouvernance configurables sans rétention de contenu.**
 
 ---
 
-# 7. Integration
+## 2.3. Options de déploiement souverain
 
-ControlTower can be integrated:
+ControlTower peut être déployé selon un modèle d’infrastructure souveraine ou contrôlée, en fonction de l’architecture de déploiement retenue.
 
-* through a simple API call;
-* without requiring a change to the underlying AI infrastructure;
-* in OBS mode;
-* in GOV mode;
-* through sovereign deployment models depending on the selected architecture;
-* with configurable monitoring, thresholds, alerts and traceability settings.
+Cela peut répondre aux besoins d’organisations nécessitant :
 
-The available capabilities depend on the selected deployment model, integration depth and organisational configuration.
+* des environnements d’hébergement contrôlés ;
+* des contraintes de localisation des données ;
+* une souveraineté des infrastructures ;
+* une intégration avec des environnements cloud de confiance ou sur site ;
+* une réduction de l’exposition des données opérationnelles liées à l’IA.
+
+### Capacité couverte
+
+**Flexibilité de déploiement pour les organisations ayant des exigences de souveraineté, de sécurité ou de contrôle de l’infrastructure.**
 
 ---
 
-# 8. Disclaimer
+# 3. Comment ControlTower peut contribuer à un processus de conformité à l’AI Act européen
 
-This document describes the technical capabilities and intended operational contribution of NeoMundi ControlTower.
+ControlTower ne remplace ni l’analyse juridique, ni l’évaluation de conformité, ni la gouvernance organisationnelle, ni une certification réglementaire.
 
-It does not constitute:
+Il fournit toutefois des capacités techniques et des preuves en exploitation qui peuvent contribuer à plusieurs domaines opérationnels pertinents dans le cadre d’un processus de conformité à l’AI Act européen.
 
-* legal advice;
-* regulatory certification;
-* a formal conformity assessment;
-* an automatic guarantee of compliance;
-* a complete assessment applicable to a specific organisation or AI use case.
+L’applicabilité de ces domaines dépend du système d’IA concerné, de sa finalité prévue, du rôle de l’organisation, de la classification de risque du système et du cas d’usage spécifique.
 
-Compliance depends on multiple factors, including:
+| Domaine opérationnel                                | Contribution de ControlTower                                                                                 | Niveau de couverture                           |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Surveillance pendant l’exploitation                 | Observation continue du comportement des réponses IA, de leur variabilité et de signaux de risque configurés | Techniquement pris en charge                   |
+| Support à la gestion des risques                    | Scores mesurés, signaux de risque, seuils, alertes et mécanismes d’escalade                                  | Techniquement pris en charge                   |
+| Traçabilité opérationnelle                          | Identifiants d’observation, métriques, horodatages et artefacts de mesure configurables                      | Techniquement pris en charge                   |
+| Support à la journalisation                         | Historique technique et artefacts de traçabilité configurables sans rétention de contenu                     | Pris en charge selon la configuration          |
+| Support à la supervision humaine                    | Alertes, parcours d’escalade, orientation vers une revue humaine et visibilité des signaux mesurés           | Capacité technique fournie                     |
+| Traitement de réponses à risque plus élevé          | Traitement différencié, revue, mise en attente ou blocage selon l’intégration                                | Capacité technique fournie selon l’intégration |
+| Auditabilité                                        | Signaux mesurés, artefacts techniques et éléments de justification                                           | Techniquement pris en charge                   |
+| Analyse et documentation d’incidents                | Preuves en exploitation pouvant soutenir l’analyse, l’investigation et la documentation d’événements         | Contribution opérationnelle directe            |
+| Surveillance post-déploiement                       | Observation longitudinale du comportement, des dérives et des changements de régime mesurables               | Contribution opérationnelle directe            |
+| Transparence des contrôles opérationnels            | Visibilité sur les signaux observés, les seuils configurés et le contexte de contrôle appliqué               | Contribution opérationnelle directe            |
+| Classification juridique complète d’un système d’IA | Dépend de la finalité prévue, du cas d’usage, du rôle de l’organisation et de l’analyse juridique            | Hors périmètre                                 |
+| Évaluation formelle de conformité                   | Nécessite le processus juridique, organisationnel et technique applicable                                    | Hors périmètre                                 |
+| Certification réglementaire                         | Nécessite le processus de certification et d’évaluation approprié                                            | Hors périmètre                                 |
 
-* the AI system concerned;
-* its intended purpose;
-* its risk classification;
-* the context of use;
-* the organisation’s role;
-* the applicable legal framework;
-* the technical and organisational measures implemented;
-* the governance and human-oversight processes maintained by the organisation.
+---
+
+## 3.1. Preuve en exploitation pour la surveillance post-déploiement
+
+Une contribution centrale de ControlTower réside dans la possibilité de créer un historique longitudinal du comportement observé d’un système d’IA pendant son fonctionnement.
+
+Cela peut aider les organisations à identifier :
+
+* une variation inattendue ;
+* une hausse des signaux de risque factuel ;
+* des changements de comportement sémantique ;
+* une dégradation de la stabilité observée ;
+* une évolution de la distribution des risques ;
+* des changements de régime silencieux ;
+* des schémas nécessitant une revue avant qu’ils ne deviennent visibles par les processus traditionnels de remontée d’incidents.
+
+ControlTower ne remplace pas une investigation d’incident.
+
+Il aide à établir qu’un signal opérationnel a été observé, mesuré et documenté à un instant donné, dans un contexte défini de mesure et de gouvernance.
+
+---
+
+## 3.2. La distinction entre mesure et autorisation
+
+ControlTower est conçu autour d’une distinction de gouvernance essentielle :
+
+> **Un signal de mesure en exploitation ne constitue pas, à lui seul, une autorisation d’agir.**
+
+Un signal mesuré peut justifier :
+
+* une information interne ;
+* une investigation complémentaire ;
+* une revue humaine ;
+* une recommandation ;
+* une escalade ;
+* une réponse de sécurité configurée.
+
+La possibilité de justifier une action aval dépend du modèle de gouvernance de l’organisation, de l’autorité responsable, du cas d’usage et des contrôles applicables.
+
+Cette distinction contribue à éviter qu’un signal technique observé soit silencieusement traité comme une décision finale.
+
+---
+
+# 4. Comment ControlTower peut contribuer à un processus de conformité au RGPD
+
+ControlTower est conçu pour soutenir des principes de traitement des données *privacy-first*.
+
+Il ne remplace ni une analyse complète au regard du RGPD, ni le registre des activités de traitement, ni une analyse d’impact relative à la protection des données, ni la responsabilité juridique du responsable de traitement ou du sous-traitant.
+
+Son architecture peut néanmoins apporter un support technique à plusieurs principes opérationnels liés au RGPD.
+
+| Domaine lié au RGPD                                   | Contribution de ControlTower                                                                                 | Niveau de couverture                |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------- |
+| Minimisation des données                              | Transmission limitée aux données nécessaires selon le mode et la finalité technique retenus                  | Soutenu par l’architecture          |
+| Protection des données dès la conception              | Les modes OBS et GOV visent à minimiser l’exposition au contenu et à éviter sa rétention                     | Soutenu par l’architecture          |
+| Limitation de la conservation                         | Absence de rétention, de journalisation et de stockage des contenus de prompts et de réponses par NeoMundi   | Soutenu par l’architecture          |
+| Support à l’accountability                            | Artefacts techniques pouvant aider à documenter les mécanismes de surveillance et de contrôle mis en œuvre   | Contribution opérationnelle directe |
+| Traçabilité des contrôles                             | Signaux, métriques, identifiants et historique technique configurable                                        | Techniquement pris en charge        |
+| Support à la documentation des traitements            | Éléments techniques pouvant contribuer à la documentation organisationnelle                                  | Contribution partielle              |
+| Registre des activités de traitement                  | Document organisationnel et juridique maintenu par le responsable de traitement ou le sous-traitant concerné | Hors périmètre                      |
+| Analyse d’impact relative à la protection des données | Évaluation juridique et organisationnelle réalisée lorsqu’elle est requise                                   | Hors périmètre                      |
+| Détermination de la base légale                       | Dépend du contexte de traitement et de l’analyse juridique de l’organisation                                 | Hors périmètre                      |
+| Gestion des droits des personnes concernées           | Nécessite des procédures et systèmes organisationnels allant au-delà de ControlTower                         | Hors périmètre                      |
+
+---
+
+# 5. Ce que ControlTower ne couvre pas
+
+NeoMundi ne remplace pas les responsabilités juridiques, organisationnelles, de sécurité ou de gouvernance d’une organisation.
+
+ControlTower ne fournit pas :
+
+* la classification juridique complète d’un système d’IA au regard de l’AI Act européen ;
+* un conseil juridique ;
+* une analyse juridique d’un cas d’usage spécifique ;
+* une confirmation automatique de conformité réglementaire ;
+* la préparation du registre des activités de traitement d’une organisation ;
+* la réalisation d’une analyse d’impact relative à la protection des données ;
+* la politique interne IA d’une organisation ;
+* la gouvernance RH ;
+* la gestion de la conformité contractuelle ;
+* la qualification complète des fournisseurs ;
+* la cartographie du Shadow AI ;
+* un audit global de cybersécurité ;
+* une évaluation formelle de conformité ;
+* une certification réglementaire ;
+* l’attribution d’une cause racine à un changement comportemental observé ;
+* la preuve qu’une réponse isolée est vraie, fausse, sûre ou conforme à partir d’un unique signal de mesure ;
+* le remplacement du jugement humain ou de l’autorité organisationnelle responsable.
+
+---
+
+# 6. Positionnement résumé
+
+**NeoMundi ControlTower est une couche de preuve en exploitation, de surveillance continue et de traçabilité pour les réponses générées par des systèmes d’IA.**
+
+Il aide les organisations à :
+
+* observer le comportement des réponses IA pendant leur fonctionnement ;
+* détecter des dérives mesurables et des changements de régime silencieux ;
+* documenter les signaux de risque et le contexte technique ;
+* soutenir la supervision humaine et les mécanismes d’escalade ;
+* appliquer des mécanismes de contrôle configurables ;
+* maintenir des preuves opérationnelles auditables ;
+* réduire l’exposition au contenu grâce à une architecture *privacy-first* ;
+* contribuer, sans s’y substituer, aux processus de conformité à l’AI Act et au RGPD.
+
+NeoMundi ne prétend pas déterminer si un système d’IA est juridiquement conforme.
+
+Il fournit la couche de preuve opérationnelle qui aide les organisations à comprendre ce que leurs systèmes d’IA faisaient en production, quels signaux ont été observés, quels contrôles étaient disponibles et quelle réponse de gouvernance a été déclenchée.
+
+---
+
+# 7. Intégration
+
+ControlTower peut être intégré :
+
+* par un simple appel API ;
+* sans nécessiter de modification de l’infrastructure IA sous-jacente ;
+* en mode OBS ;
+* en mode GOV ;
+* selon des modèles de déploiement souverain en fonction de l’architecture retenue ;
+* avec des paramètres configurables de surveillance, de seuils, d’alertes et de traçabilité.
+
+Les capacités disponibles dépendent du modèle de déploiement sélectionné, de la profondeur d’intégration et de la configuration de l’organisation.
+
+### Accéder à la plateforme
+
+[**Créer votre compte et votre clé API →**](https://controltower.neomundi.io/welcome)
+
+---
+
+# 8. Avertissement
+
+Ce document décrit les capacités techniques et la contribution opérationnelle visée par NeoMundi ControlTower.
+
+Il ne constitue pas :
+
+* un conseil juridique ;
+* une certification réglementaire ;
+* une évaluation formelle de conformité ;
+* une garantie automatique de conformité ;
+* une évaluation complète applicable à une organisation ou à un cas d’usage IA spécifique.
+
+La conformité dépend de plusieurs facteurs, notamment :
+
+* du système d’IA concerné ;
+* de sa finalité prévue ;
+* de sa classification de risque ;
+* du contexte d’utilisation ;
+* du rôle de l’organisation ;
+* du cadre juridique applicable ;
+* des mesures techniques et organisationnelles mises en œuvre ;
+* des processus de gouvernance et de supervision humaine maintenus par l’organisation.
+
+---
+
+## NeoMundi
+
+**Mesure runtime indépendante pour les systèmes d’IA.**
+
+Une primitive de mesure. Plusieurs applications. Plusieurs infrastructures.
+
+**NeoMundi fournit le signal. Votre organisation conserve l’autorité.**
