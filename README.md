@@ -194,81 +194,35 @@ For example, an organization can use ControlTower to document that:
 
 ---
 
-# 2. Privacy-first architecture
+# 2. Data protection boundaries
 
-ControlTower is designed according to data-protection-by-design principles.
+ControlTower is designed to support data minimization, but NeoMundi has several distinct data flows. No organization-wide claim of zero transmission, zero storage or zero retention is made here.
 
-Depending on the selected deployment mode and configuration, its architecture aims to minimize exposure to content and limit processing to the data required for measurement, monitoring and configured governance mechanisms.
+The currently reviewed technical boundaries are:
 
-The core principles include:
+* a REST measurement request may include prompt and response text when the caller supplies them;
+* an SSE generation path sends generation arguments and the configured provider credential upstream;
+* submitted text may be processed by enabled evaluators and services;
+* Station documents an internal ledger containing answers and measurement context, while its read-only interface returns fingerprints and lengths instead of raw text;
+* the interoperability export excludes raw prompts, responses and provider/model identifiers by schema design.
 
-* zero content retention;
-* zero content logging;
-* zero content storage;
-* data minimization;
-* configurable traceability;
-* deployment flexibility, including sovereign deployment models where available.
+Transmission, processing, disclosure and retention are different questions. Retention and deletion guarantees must be established for each deployment, service, evaluator, log, backup and store. An export or read-only interface without raw text does not prove that raw text was never processed or stored upstream.
 
-Prompt and response content is not retained, indexed, reused or stored by NeoMundi.
+[**Review the canonical Data Protection & Confidentiality documentation →**](https://github.com/neomundi-io/neomundi-io-data-protection)
 
-Minimal technical measurement and traceability artifacts may remain available depending on the selected mode, configuration and deployment model.
+## 2.1. OBS paths
 
-## 2.1. OBS mode
+OBS is a measurement-layer label, not a guarantee that the payload is metrics-only. The reviewed REST path can receive llm_prompt and llm_response when supplied by the caller. Other integrations may submit reduced execution objects, but the measurements that remain available and their provenance depend on the actual payload and deployment.
 
-In OBS mode, NeoMundi receives only the technical elements required for observation.
+## 2.2. GOV and generation paths
 
-These may include:
+In GOV or generation paths, content and provider parameters may transit through NeoMundi and configured upstream services for measurement, generation or enabled controls. The exact destinations, evaluators, available governance mechanisms, storage and retention depend on the selected route, integration and deployment.
 
-* normalized metrics;
-* technical observation artifacts;
-* pseudonymous identifiers or references required for configured traceability;
-* aggregated operational signals or signals unrelated to content.
-
-NeoMundi does not receive:
-
-* raw prompts;
-* raw responses;
-* stored semantic content from exchanges;
-* customer content intended for reuse or indexing.
-
-### Covered capability
-
-**Risk observation and technical traceability without transmitting or retaining prompt and response content.**
-
-## 2.2. GOV mode
-
-In GOV mode, data may transit in real time solely for measurement and the application of configured governance rules.
-
-The content:
-
-* is not retained;
-* is not indexed;
-* is not reused;
-* is not stored.
-
-The exact operation of GOV mode depends on the selected integration, deployment model and organizational configuration.
-
-### Covered capability
-
-**Real-time measurement and configurable governance mechanisms without content retention.**
+A measurement signal does not itself authorize an action. Blocking, holding, routing or human-review mechanisms exist only where the consuming integration explicitly implements and authorizes them.
 
 ## 2.3. Sovereign deployment options
 
-ControlTower can be deployed using a sovereign or controlled infrastructure model, depending on the selected deployment architecture.
-
-This can address the needs of organizations requiring:
-
-* controlled hosting environments;
-* data-location constraints;
-* infrastructure sovereignty;
-* integration with trusted-cloud or on-premises environments;
-* reduced exposure of operational AI data.
-
-### Covered capability
-
-**Deployment flexibility for organizations with sovereignty, security or infrastructure-control requirements.**
-
----
+Sovereign or controlled deployment models may be available depending on the selected architecture. Their data location, operators, subprocessors, access controls and retention rules must be documented for the actual deployment; they are not inferred from the deployment label.
 
 # 3. How ControlTower can contribute to an EU AI Act compliance process
 
@@ -283,7 +237,7 @@ The applicability of these areas depends on the AI system, its intended purpose,
 | Monitoring during operation | Continuous observation of AI-response behavior, variability and configured risk signals | Technically supported |
 | Risk-management support | Measured scores, risk signals, thresholds, alerts and escalation mechanisms | Technically supported |
 | Operational traceability | Observation identifiers, metrics, timestamps and configurable measurement artifacts | Technically supported |
-| Logging support | Configurable technical history and traceability artifacts without content retention | Supported depending on configuration |
+| Logging support | Configurable technical history and traceability artifacts; content retention depends on the deployment | Supported depending on configuration |
 | Human-oversight support | Alerts, escalation paths, routing to human review and visibility of measured signals | Technical capability provided |
 | Treatment of higher-risk responses | Differentiated treatment, review, hold or blocking depending on the integration | Technical capability provided depending on integration |
 | Auditability | Measured signals, technical artifacts and justification elements | Technically supported |
@@ -344,8 +298,8 @@ Its architecture can nevertheless provide technical support for several GDPR-rel
 | GDPR-related area | ControlTower contribution | Coverage level |
 |---|---|---|
 | Data minimization | Transmission limited to the data required by the selected mode and technical purpose | Supported by design |
-| Data protection by design | OBS and GOV modes aim to minimize content exposure and prevent its retention | Supported by design |
-| Storage limitation | No retention, logging or storage of prompt and response content by NeoMundi | Supported by design |
+| Data protection by design | Selected paths may minimize content exposure; actual processing and retention remain deployment-specific | Supported by design |
+| Storage limitation | No universal guarantee established; rules must be verified per service, evaluator, log, backup and store | Supported by design |
 | Accountability support | Technical artifacts that can help document implemented monitoring and control mechanisms | Direct operational contribution |
 | Traceability of controls | Signals, metrics, identifiers and configurable technical history | Technically supported |
 | Support for processing documentation | Technical elements that can contribute to organizational documentation | Partial contribution |
