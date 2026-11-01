@@ -195,87 +195,35 @@ Par exemple, une organisation peut utiliser ControlTower pour documenter que :
 
 ---
 
-# 2. Architecture privacy-first
+# 2. Frontières de protection des données
 
-ControlTower est conçu selon des principes de protection des données dès la conception.
+ControlTower est conçu pour soutenir la minimisation des données, mais NeoMundi comporte plusieurs flux distincts. Ce document ne formule aucune promesse générale de zéro transmission, zéro stockage ou zéro conservation.
 
-Selon le mode de déploiement et la configuration sélectionnés, son architecture vise à minimiser l’exposition au contenu et à limiter le traitement aux données nécessaires à la mesure, à la surveillance et aux mécanismes de gouvernance configurés.
+Les frontières techniques actuellement examinées sont les suivantes :
 
-Les principes structurants incluent :
+* une requête de mesure REST peut inclure le prompt et la réponse lorsque l'appelant les fournit ;
+* un parcours de génération SSE transmet des paramètres de génération et l'identifiant fournisseur configuré au service amont ;
+* le texte soumis peut être traité par les évaluateurs et services activés ;
+* Station documente un registre interne contenant les réponses et le contexte de mesure, tandis que son interface en lecture seule restitue des empreintes et longueurs plutôt que le texte brut ;
+* l'export d'interopérabilité exclut par conception les prompts, réponses et identifiants bruts de fournisseur ou modèle.
 
-* zéro rétention de contenu ;
-* zéro journalisation de contenu ;
-* zéro stockage de contenu ;
-* minimisation des données ;
-* traçabilité configurable ;
-* flexibilité de déploiement, y compris des modèles de déploiement souverains lorsque disponibles.
+Transmission, traitement, divulgation et conservation sont des questions distinctes. Les garanties de conservation et d'effacement doivent être établies pour chaque déploiement, service, évaluateur, journal, sauvegarde et stockage. Un export ou une interface de lecture sans texte brut ne prouve pas que le texte brut n'a jamais été traité ou stocké en amont.
 
-Les contenus des prompts et des réponses ne sont ni conservés, ni indexés, ni réutilisés, ni stockés par NeoMundi.
+[**Consulter la documentation canonique Protection des données et confidentialité →**](https://github.com/neomundi-io/neomundi-io-data-protection/blob/main/README_FR.md)
 
-Des artefacts techniques minimaux de mesure et de traçabilité peuvent rester disponibles selon le mode sélectionné, la configuration et le modèle de déploiement retenu.
+## 2.1. Parcours OBS
 
----
+OBS est un libellé de couche de mesure, pas une garantie que la charge utile se limite aux métriques. Le parcours REST examiné peut recevoir llm_prompt et llm_response lorsque l'appelant les fournit. D'autres intégrations peuvent soumettre des objets d'exécution réduits, mais les mesures encore disponibles et leur provenance dépendent de la charge utile et du déploiement réels.
 
-## 2.1. Mode OBS
+## 2.2. Parcours GOV et génération
 
-En mode OBS, NeoMundi reçoit uniquement les éléments techniques nécessaires à l’observation.
+Dans les parcours GOV ou de génération, le contenu et les paramètres fournisseur peuvent transiter par NeoMundi et les services amont configurés pour la mesure, la génération ou les contrôles activés. Les destinations, évaluateurs, mécanismes de gouvernance disponibles, stockages et durées de conservation dépendent de la route, de l'intégration et du déploiement retenus.
 
-Cela peut inclure :
-
-* des métriques normalisées ;
-* des artefacts techniques d’observation ;
-* des identifiants ou références pseudonymes requis pour la traçabilité configurée ;
-* des signaux opérationnels agrégés ou non liés au contenu.
-
-NeoMundi ne reçoit pas :
-
-* les prompts bruts ;
-* les réponses brutes ;
-* le contenu sémantique stocké des échanges ;
-* du contenu client destiné à être réutilisé ou indexé.
-
-### Capacité couverte
-
-**Observation du risque et traçabilité technique sans transmission ni rétention du contenu des prompts et des réponses.**
-
----
-
-## 2.2. Mode GOV
-
-En mode GOV, des données peuvent transiter en temps réel uniquement à des fins de mesure et d’application de règles de gouvernance configurées.
-
-Le contenu :
-
-* n’est pas retenu ;
-* n’est pas indexé ;
-* n’est pas réutilisé ;
-* n’est pas stocké.
-
-Le fonctionnement précis du mode GOV dépend de l’intégration retenue, du modèle de déploiement et de la configuration de l’organisation.
-
-### Capacité couverte
-
-**Mesure en temps réel et mécanismes de gouvernance configurables sans rétention de contenu.**
-
----
+Un signal de mesure n'autorise pas à lui seul une action. Les mécanismes de blocage, mise en attente, routage ou revue humaine n'existent que lorsque l'intégration consommatrice les implémente et les autorise explicitement.
 
 ## 2.3. Options de déploiement souverain
 
-ControlTower peut être déployé selon un modèle d’infrastructure souveraine ou contrôlée, en fonction de l’architecture de déploiement retenue.
-
-Cela peut répondre aux besoins d’organisations nécessitant :
-
-* des environnements d’hébergement contrôlés ;
-* des contraintes de localisation des données ;
-* une souveraineté des infrastructures ;
-* une intégration avec des environnements cloud de confiance ou sur site ;
-* une réduction de l’exposition des données opérationnelles liées à l’IA.
-
-### Capacité couverte
-
-**Flexibilité de déploiement pour les organisations ayant des exigences de souveraineté, de sécurité ou de contrôle de l’infrastructure.**
-
----
+Des modèles de déploiement souverains ou contrôlés peuvent être disponibles selon l'architecture retenue. La localisation des données, les opérateurs, sous-traitants, contrôles d'accès et règles de conservation doivent être documentés pour le déploiement réel ; ils ne se déduisent pas du libellé du déploiement.
 
 # 3. Comment ControlTower peut contribuer à un processus de conformité à l’AI Act européen
 
@@ -355,8 +303,8 @@ Son architecture peut néanmoins apporter un support technique à plusieurs prin
 | Domaine lié au RGPD                                   | Contribution de ControlTower                                                                                 | Niveau de couverture                |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------- |
 | Minimisation des données                              | Transmission limitée aux données nécessaires selon le mode et la finalité technique retenus                  | Soutenu par l’architecture          |
-| Protection des données dès la conception              | Les modes OBS et GOV visent à minimiser l’exposition au contenu et à éviter sa rétention                     | Soutenu par l’architecture          |
-| Limitation de la conservation                         | Absence de rétention, de journalisation et de stockage des contenus de prompts et de réponses par NeoMundi   | Soutenu par l’architecture          |
+| Protection des données dès la conception              | Certains parcours peuvent minimiser l’exposition ; le traitement et la conservation réels dépendent du déploiement                     | Soutenu par l’architecture          |
+| Limitation de la conservation                         | Aucune garantie universelle établie ; règles à vérifier pour chaque service, évaluateur, journal, sauvegarde et stockage   | Soutenu par l’architecture          |
 | Support à l’accountability                            | Artefacts techniques pouvant aider à documenter les mécanismes de surveillance et de contrôle mis en œuvre   | Contribution opérationnelle directe |
 | Traçabilité des contrôles                             | Signaux, métriques, identifiants et historique technique configurable                                        | Techniquement pris en charge        |
 | Support à la documentation des traitements            | Éléments techniques pouvant contribuer à la documentation organisationnelle                                  | Contribution partielle              |
