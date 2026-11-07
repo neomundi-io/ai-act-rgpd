@@ -1,43 +1,76 @@
-# NeoMundi ControlTower
+<div align="center">
 
-[🇬🇧 English](./README.md) · [🇫🇷 Français](./README_FR.md) ·
-[NeoMundi](https://neomundi.io) ·
-[Create an account](https://controltower.neomundi.io/welcome)
+<sub><b>English</b> · <a href="README_FR.md">Français</a></sub>
 
-## Runtime evidence, continuous monitoring and traceability for AI governance
+# NeoMundi — AI Act & GDPR
 
-NeoMundi ControlTower helps organizations observe the behavior of AI-generated responses in production, detect measurable drift and regime changes, document risk signals, apply configurable governance mechanisms and retain auditable technical evidence.
+### From measurement to technical evidence for AI governance.
 
-**One API integration · Continuous runtime signals · Configurable governance · Auditable evidence**
+**Measure behaviour, document observation conditions and verify technical artefacts that can support AI governance and compliance work.**
 
-ControlTower is designed with a privacy-first approach. It can be integrated through a simple API call without replacing the underlying AI infrastructure and can support sovereign deployment models depending on the selected architecture.
+**Measurement → Station → Evidence**
 
-### Start using ControlTower
+[![Measurement](https://img.shields.io/badge/Measurement-Measure-2563eb?style=flat-square)](https://github.com/neomundi-io/neomundi-runtime-measurement)
+[![Station](https://img.shields.io/badge/Station-Observe-0f766e?style=flat-square)](https://github.com/neomundi-io/neomundi-station-public)
+[![Evidence](https://img.shields.io/badge/Evidence-Verify-D4A545?style=flat-square)](https://github.com/neomundi-io/neomundi-evidence-public)
+[![Use cases](https://img.shields.io/badge/Use_cases-Explore-64748b?style=flat-square)](https://github.com/neomundi-io/neomundi-use-cases)
 
-1. **Create your account and API key**  
-   [Open NeoMundi ControlTower →](https://controltower.neomundi.io/welcome)
+**[API](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md)** · **[Create an account](https://controltower.neomundi.io/welcome)**
 
-2. **Connect your AI system**  
-   Integrate through the NeoMundi API using the documentation and the deployment mode suited to your environment.
-
-3. **Observe and govern**  
-   Receive runtime measurements, configure monitoring and escalation rules, and retain traceable evidence of the controls available and applied.
-
-This document explains:
-
-1. what ControlTower technically covers today;
-2. how these capabilities can contribute to an organization’s compliance processes under the European AI Act and the GDPR;
-3. what remains outside NeoMundi’s scope and under each organization’s responsibility.
-
-> **Important:** NeoMundi does not determine whether an AI system is legally compliant. It provides a runtime evidence layer that helps organizations observe behavioral drift, document risk signals, trigger appropriate human review and demonstrate that operational controls existed when required.
+</div>
 
 ---
 
-# 1. What ControlTower actually covers
+## What NeoMundi contributes
+
+Organisations need to explain what their AI produced, under what conditions, which signals were measured and what records can be inspected. NeoMundi supplies the technical building blocks to answer those questions.
+
+| Product | Operational contribution | Start here |
+|---|---|---|
+| **[Measurement](https://github.com/neomundi-io/neomundi-runtime-measurement)** | Versioned response measurements, status, evaluator coverage and bounded risk signals. | [API quickstart](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md) |
+| **[Station](https://github.com/neomundi-io/neomundi-station-public)** | Observation campaigns, execution context, records, provenance and export. | [Overview](https://github.com/neomundi-io/neomundi-station-public) |
+| **[Evidence](https://github.com/neomundi-io/neomundi-evidence-public)** | Archive-integrity verification, artefact traceability and Ed25519 attestation checks. | [User guide](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_USER_GUIDE.md) · [Demo](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_TECHNICAL_DEMO.md) |
+
+**Demonstrated:** a real experimental Q-2 qualification traversed Measurement → Station → Evidence, including a verified Ed25519 attestation. Technical checks passed in their tested scope; **overall Q-2 verdict PARTIAL**. Its source dossier is private. See the [Evidence validation report](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_VALIDATION_REPORT.md).
+
+## Where this evidence may help
+
+| Governance need | Potential contribution | To confirm per deployment |
+|---|---|---|
+| **Traceability and logging** | IDs, measurements, campaign records, hashes, verifiable archives | Capture, completeness, exports, retention and access |
+| **Human oversight** | Signals to inform designated reviewers and escalation | Alerts and routing actually configured in the consuming system |
+| **Quality and drift monitoring** | Longitudinal comparison of compatible instrumented measurements | Protocol, frequency, coverage and validated thresholds |
+| **Incident investigation and audit** | Traceable technical dossiers, verification results and attestations | Chain of custody, available records and limits of evidence |
+| **Data protection** | Minimisation options and content-limited exports for selected paths | Actual flows, evaluators, processors and retention |
+
+This matrix describes a **potential technical contribution**, not certification of compliance or a claim that all mechanisms are available in every integration. The API route, integration and deployment determine what operates. Authorization, blocking and compliance decisions remain with the organisation.
+
+## EU AI Act timeline — checked 7 November 2026
+
+[Regulation (EU) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj), as amended notably by [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj), applies progressively:
+
+| Date | Main provisions |
+|---|---|
+| **2 February 2025** | Initial definitions, AI literacy and prohibited practices |
+| **2 August 2025** | General-purpose AI model rules |
+| **2 August 2026** | Majority of other provisions, including several transparency obligations |
+| **2 December 2026** | Additional specified prohibitions and certain Article 50(2) transitional requirements |
+| **2 December 2027** | High-risk AI rules for Annex III systems |
+| **2 August 2028** | High-risk AI rules for Annex I product-embedded systems |
+
+**Primary references:** [European Commission implementation timeline](https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline) and [amending regulation in the Official Journal](https://eur-lex.europa.eu/eli/reg/2026/1744/oj). The applicable obligations depend on the organisation's role, system purpose and relevant provisions.
+
+## Detailed operational reference
+
+The sections below retain the existing AI Act/GDPR mappings, data flows and possible control mechanisms. Configurable capabilities must be checked per integration; a measurement score does not independently grant authority to act.
+
+---
+
+# 1. What NeoMundi actually covers
 
 ## 1.1. Operational traceability of observed AI responses
 
-ControlTower associates observed events related to AI responses with technical and operational artifacts that may include:
+NeoMundi associates observed events related to AI responses with technical and operational artifacts that may include:
 
 * an observation identifier;
 * calculated metrics;
@@ -56,9 +89,9 @@ These artifacts make it possible to connect an observed behavior with the techni
 
 ---
 
-## 1.2. Continuous monitoring of AI-response behavior
+## 1.2. Monitoring AI-response behavior
 
-ControlTower continuously observes signals associated with the behavior of AI systems during operation.
+NeoMundi continuously observes signals associated with the behavior of AI systems during operation.
 
 Depending on the enabled modules and selected configuration, these signals may include:
 
@@ -84,7 +117,7 @@ The objective is to make observable the moment when the measured behavior of a s
 
 ## 1.3. Detection of behavioral drift and silent regime changes
 
-ControlTower can help identify measurable changes in the behavior of an AI system over time.
+NeoMundi can help identify measurable changes in the behavior of an AI system over time.
 
 A behavioral change may appear even when:
 
@@ -95,7 +128,7 @@ A behavioral change may appear even when:
 
 These observations may concern changes in factual-risk signals, semantic variation, stability or other monitored indicators.
 
-ControlTower does not attribute the cause of a detected behavioral change unless an independent investigation establishes it.
+NeoMundi does not attribute the cause of a detected behavioral change unless an independent investigation establishes it.
 
 A detected signal is an operational observation. By itself, it is not proof of a provider change, system failure, legal breach or root cause.
 
@@ -107,7 +140,7 @@ A detected signal is an operational observation. By itself, it is not proof of a
 
 ## 1.4. Configurable governance and control mechanisms
 
-ControlTower can support configurable governance mechanisms applied in real time or near real time, depending on the selected integration.
+NeoMundi can support configurable governance mechanisms applied in real time or near real time, depending on the selected integration.
 
 These mechanisms may include:
 
@@ -120,7 +153,7 @@ These mechanisms may include:
 * observation and decision logs;
 * auditing of rule application and measurement history.
 
-ControlTower does not silently turn an observed signal into an authorized action.
+NeoMundi does not silently turn an observed signal into an authorized action.
 
 A measurement signal may justify information, review or escalation, but the authority to act remains defined by the organization’s governance rules, accountable roles and selected integration.
 
@@ -132,7 +165,7 @@ A measurement signal may justify information, review or escalation, but the auth
 
 ## 1.5. Support for human oversight
 
-ControlTower can support human oversight by making relevant runtime signals visible and actionable.
+NeoMundi can support human oversight by making relevant runtime signals visible and actionable.
 
 Depending on the configuration, the platform can help organizations:
 
@@ -153,7 +186,7 @@ The platform provides technical support for human oversight. It does not replace
 
 ## 1.6. Auditability and runtime evidence
 
-ControlTower produces measurable and verifiable technical elements that may include:
+NeoMundi produces measurable and verifiable technical elements that may include:
 
 * metrics;
 * scores;
@@ -175,11 +208,11 @@ These elements can support an internal audit, incident analysis, operational rev
 
 ## 1.7. Evidence-based operational governance
 
-ControlTower does not rely solely on declarative claims about the reliability of an AI system.
+NeoMundi does not rely solely on declarative claims about the reliability of an AI system.
 
 It provides measured, traceable and configurable signals that can help organizations make their governance processes more explicit.
 
-For example, an organization can use ControlTower to document that:
+For example, an organization can use NeoMundi to document that:
 
 * an observation was detected;
 * a risk signal crossed a configured threshold;
@@ -196,7 +229,7 @@ For example, an organization can use ControlTower to document that:
 
 # 2. Data protection boundaries
 
-ControlTower is designed to support data minimization, but NeoMundi has several distinct data flows. No organization-wide claim of zero transmission, zero storage or zero retention is made here.
+NeoMundi is designed to support data minimization, but NeoMundi has several distinct data flows. No organization-wide claim of zero transmission, zero storage or zero retention is made here.
 
 The currently reviewed technical boundaries are:
 
@@ -224,15 +257,15 @@ A measurement signal does not itself authorize an action. Blocking, holding, rou
 
 Sovereign or controlled deployment models may be available depending on the selected architecture. Their data location, operators, subprocessors, access controls and retention rules must be documented for the actual deployment; they are not inferred from the deployment label.
 
-# 3. How ControlTower can contribute to an EU AI Act compliance process
+# 3. How NeoMundi can contribute to an EU AI Act compliance process
 
-ControlTower does not replace legal analysis, conformity assessment, organizational governance or regulatory certification.
+NeoMundi does not replace legal analysis, conformity assessment, organizational governance or regulatory certification.
 
 It nevertheless provides technical capabilities and runtime evidence that can contribute to several operational areas relevant to an EU AI Act compliance process.
 
 The applicability of these areas depends on the AI system, its intended purpose, the organization’s role, the system’s risk classification and the specific use case.
 
-| Operational area | ControlTower contribution | Coverage level |
+| Operational area | NeoMundi contribution | Coverage level |
 |---|---|---|
 | Monitoring during operation | Continuous observation of AI-response behavior, variability and configured risk signals | Technically supported |
 | Risk-management support | Measured scores, risk signals, thresholds, alerts and escalation mechanisms | Technically supported |
@@ -250,7 +283,7 @@ The applicability of these areas depends on the AI system, its intended purpose,
 
 ## 3.1. Runtime evidence for post-deployment monitoring
 
-A central contribution of ControlTower is its ability to create a longitudinal history of the observed behavior of an AI system during operation.
+A central contribution of NeoMundi is its ability to create a longitudinal history of the observed behavior of an AI system during operation.
 
 This can help organizations identify:
 
@@ -262,13 +295,13 @@ This can help organizations identify:
 * silent regime changes;
 * patterns requiring review before they become visible through traditional incident-reporting processes.
 
-ControlTower does not replace an incident investigation.
+NeoMundi does not replace an incident investigation.
 
 It helps establish that an operational signal was observed, measured and documented at a given time within a defined measurement and governance context.
 
 ## 3.2. The distinction between measurement and authorization
 
-ControlTower is built around an essential governance distinction:
+NeoMundi is built around an essential governance distinction:
 
 > **A runtime measurement signal does not, by itself, constitute authorization to act.**
 
@@ -287,15 +320,15 @@ This distinction prevents an observed technical signal from being silently treat
 
 ---
 
-# 4. How ControlTower can contribute to a GDPR compliance process
+# 4. How NeoMundi can contribute to a GDPR compliance process
 
-ControlTower is designed to support privacy-first data-processing principles.
+NeoMundi is designed to support privacy-first data-processing principles.
 
 It does not replace a complete GDPR analysis, a record of processing activities, a data protection impact assessment, or the legal responsibility of a controller or processor.
 
 Its architecture can nevertheless provide technical support for several GDPR-related operational principles.
 
-| GDPR-related area | ControlTower contribution | Coverage level |
+| GDPR-related area | NeoMundi contribution | Coverage level |
 |---|---|---|
 | Data minimization | Transmission limited to the data required by the selected mode and technical purpose | Supported by design |
 | Data protection by design | Selected paths may minimize content exposure; actual processing and retention remain deployment-specific | Supported by design |
@@ -306,15 +339,15 @@ Its architecture can nevertheless provide technical support for several GDPR-rel
 | Record of processing activities | Organizational and legal document maintained by the relevant controller or processor | Out of scope |
 | Data protection impact assessment | Legal and organizational assessment performed when required | Out of scope |
 | Determination of the legal basis | Depends on the processing context and the organization’s legal analysis | Out of scope |
-| Management of data-subject rights | Requires organizational procedures and systems beyond ControlTower | Out of scope |
+| Management of data-subject rights | Requires organizational procedures and systems beyond NeoMundi | Out of scope |
 
 ---
 
-# 5. What ControlTower does not cover
+# 5. What NeoMundi does not cover
 
 NeoMundi does not replace an organization’s legal, organizational, security or governance responsibilities.
 
-ControlTower does not provide:
+NeoMundi does not provide:
 
 * the complete legal classification of an AI system under the EU AI Act;
 * legal advice;
@@ -338,7 +371,7 @@ ControlTower does not provide:
 
 # 6. Positioning summary
 
-**NeoMundi ControlTower is a runtime evidence, continuous monitoring and traceability layer for responses generated by AI systems.**
+**NeoMundi NeoMundi is a runtime evidence, continuous monitoring and traceability layer for responses generated by AI systems.**
 
 It helps organizations:
 
@@ -359,7 +392,7 @@ It provides the operational evidence layer that helps organizations understand w
 
 # 7. Integration
 
-ControlTower can be integrated:
+NeoMundi can be integrated:
 
 * through a simple API call;
 * without requiring replacement of the underlying AI infrastructure;
@@ -378,7 +411,7 @@ Available capabilities depend on the selected deployment model, depth of integra
 
 # 8. Disclaimer
 
-This document describes NeoMundi ControlTower’s technical capabilities and intended operational contribution.
+This document describes NeoMundi NeoMundi’s technical capabilities and intended operational contribution.
 
 It does not constitute:
 
