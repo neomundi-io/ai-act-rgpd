@@ -1,44 +1,76 @@
-# NeoMundi ControlTower
+<div align="center">
 
-[🇬🇧 English](./README.md) · [🇫🇷 Français](./README_FR.md) ·
-[NeoMundi](https://neomundi.io) ·
-[Créer un compte](https://controltower.neomundi.io/welcome)
+<sub><a href="README.md">English</a> · <b>Français</b></sub>
 
-## Preuve en exploitation, surveillance continue et traçabilité pour la gouvernance de l’IA
+# NeoMundi — AI Act & RGPD
 
-NeoMundi ControlTower aide les organisations à observer le comportement des réponses générées par des systèmes d’IA en production, à détecter des dérives et des changements de régime mesurables, à documenter les signaux de risque, à appliquer des mécanismes de gouvernance configurables et à conserver des preuves techniques auditables.
+### De la mesure aux preuves techniques pour la gouvernance des IA.
 
-**Une intégration API · Signaux runtime continus · Gouvernance configurable · Preuves auditables**
+**Mesurer les comportements, documenter les conditions d'observation et vérifier les éléments techniques pouvant contribuer à la gouvernance et aux démarches de conformité.**
 
-ControlTower est conçu selon une approche *privacy-first*. Il peut être intégré par un simple appel API, sans remplacer l’infrastructure IA sous-jacente, et peut prendre en charge des modèles de déploiement souverains selon l’architecture retenue.
+**Measurement → Station → Evidence**
 
-### Commencer avec ControlTower
+[![Measurement](https://img.shields.io/badge/Measurement-Mesurer-2563eb?style=flat-square)](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/README_FR.md)
+[![Station](https://img.shields.io/badge/Station-Observer-0f766e?style=flat-square)](https://github.com/neomundi-io/neomundi-station-public/blob/main/README.fr.md)
+[![Evidence](https://img.shields.io/badge/Evidence-Verifier-D4A545?style=flat-square)](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/README.fr.md)
+[![Use cases](https://img.shields.io/badge/Cas_d_usage-Explorer-64748b?style=flat-square)](https://github.com/neomundi-io/neomundi-use-cases/blob/main/README_FR.md)
 
-1. **Créez votre compte et votre clé API**  
-   [Ouvrir NeoMundi ControlTower →](https://controltower.neomundi.io/welcome)
+**[API](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md)** · **[Créer un compte](https://controltower.neomundi.io/welcome)**
 
-2. **Connectez votre système d’IA**  
-   Intégrez l’API NeoMundi en suivant la documentation et en sélectionnant le mode de déploiement adapté à votre environnement.
-
-3. **Observez et gouvernez**  
-   Recevez les mesures runtime, configurez les règles de surveillance et d’escalade, puis conservez une preuve traçable des contrôles disponibles et appliqués.
-
-Ce document présente :
-
-1. ce que ControlTower couvre techniquement aujourd’hui ;
-2. comment ces capacités peuvent contribuer au processus de conformité d’une organisation au regard de l’AI Act européen et du RGPD ;
-3. ce qui reste en dehors du périmètre de NeoMundi et relève de la responsabilité de chaque organisation.
-
-> **Important :** NeoMundi ne détermine pas si un système d’IA est juridiquement conforme.
-> Il fournit une couche de preuve en exploitation qui aide les organisations à observer les dérives comportementales, documenter les signaux de risque, déclencher une revue humaine adaptée et démontrer que des contrôles opérationnels existaient lorsqu’ils étaient nécessaires.
+</div>
 
 ---
 
-# 1. Ce que ControlTower couvre réellement
+## Ce que NeoMundi apporte
+
+Une organisation doit pouvoir expliquer ce que ses IA ont produit, dans quelles conditions, quels signaux ont été mesurés et quelles traces sont disponibles pour un contrôle. NeoMundi fournit un socle technique pour répondre à ces questions.
+
+| Produit | Contribution opérationnelle | Documents utiles |
+|---|---|---|
+| **[Measurement](https://github.com/neomundi-io/neomundi-runtime-measurement)** | Mesures versionnées des réponses IA, statuts, couverture des évaluateurs et signaux de risque bornés. | [API et première mesure](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md) |
+| **[Station](https://github.com/neomundi-io/neomundi-station-public)** | Campagnes d'observation, contexte d'exécution, journalisation, provenance et export des dossiers. | [Présentation](https://github.com/neomundi-io/neomundi-station-public/blob/main/README.fr.md) |
+| **[Evidence](https://github.com/neomundi-io/neomundi-evidence-public)** | Vérification de l'intégrité d'archives, traçabilité des artefacts et contrôle d'attestations Ed25519. | [Mode d'emploi](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_USER_GUIDE.fr.md) · [Démonstration](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_TECHNICAL_DEMO.fr.md) |
+
+**Ce qui est démontré :** une qualification expérimentale réelle Q-2 a traversé Measurement → Station → Evidence, avec attestation Ed25519 vérifiée. Verdict technique positif sur les contrôles exécutés ; **verdict global Q-2 PARTIAL**. Le dossier source demeure privé. Voir le [rapport de validation Evidence](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_VALIDATION_REPORT.fr.md).
+
+## Où ces preuves peuvent être utiles
+
+| Besoin de gouvernance | Contribution possible | Ce qui doit être établi pour chaque intégration |
+|---|---|---|
+| **Traçabilité et journalisation** | Identifiants, mesures, traces de campagne, empreintes et archives contrôlables | Captation, exhaustivité, export, conservation, droits d'accès |
+| **Supervision humaine** | Signaux pour examen et escalade par les responsables désignés | Alertes et routage réellement configurés dans le système consommateur |
+| **Suivi de qualité et de dérive** | Comparaison longitudinale de mesures compatibles dans des campagnes ou dispositifs instrumentés | Protocole, fréquence, couverture et seuils validés |
+| **Analyse d'incident et audit** | Dossiers techniques traçables, résultats de vérification et attestations | Chaîne de conservation, données disponibles et périmètre de preuve |
+| **Protection des données** | Possibilités de minimisation et d'exports sans contenu brut selon le chemin | Cartographie réelle des flux, évaluateurs, sous-traitants et rétention |
+
+Cette matrice décrit une **contribution technique potentielle**, pas une certification de conformité ni la disponibilité universelle de tous les mécanismes. Le fonctionnement dépend de la voie API, de l'intégration et du déploiement. Les décisions d'autorisation, de blocage et de conformité restent sous la responsabilité de l'organisation.
+
+## Calendrier AI Act — vérifié le 7 novembre 2026
+
+Le [règlement (UE) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr), modifié notamment par le [règlement (UE) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj?locale=fr), prévoit une application échelonnée :
+
+| Échéance | Principales dispositions |
+|---|---|
+| **2 février 2025** | Définitions, culture IA et interdictions initiales |
+| **2 août 2025** | Règles relatives aux modèles d'IA à usage général |
+| **2 août 2026** | Application de la majorité des autres règles, dont plusieurs obligations de transparence |
+| **2 décembre 2026** | Nouvelles interdictions spécifiques et échéance transitoire de l'article 50(2) pour certains systèmes |
+| **2 décembre 2027** | Obligations des systèmes à haut risque relevant de l'annexe III |
+| **2 août 2028** | Obligations des systèmes à haut risque intégrés aux produits de l'annexe I |
+
+**Sources primaires :** [calendrier Commission européenne](https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline) et [texte modificatif au Journal officiel](https://eur-lex.europa.eu/eli/reg/2026/1744/oj?locale=fr). Les obligations concrètes dépendent du rôle de l'organisation, de la finalité du système et des dispositions applicables.
+
+## Documentation opérationnelle détaillée
+
+Les sections suivantes conservent le référentiel AI Act/RGPD, les flux de données, les mécanismes possibles et leurs frontières. Les capacités décrites comme configurables sont à confirmer pour chaque parcours ; un score de mesure n'est jamais à lui seul une autorisation d'agir.
+
+---
+
+# 1. Ce que NeoMundi couvre réellement
 
 ## 1.1. Traçabilité opérationnelle des réponses IA observées
 
-ControlTower associe les événements observés liés aux réponses d’IA à des artefacts techniques et opérationnels pouvant inclure :
+NeoMundi associe les événements observés liés aux réponses d’IA à des artefacts techniques et opérationnels pouvant inclure :
 
 * un identifiant d’observation ;
 * des métriques calculées ;
@@ -57,9 +89,9 @@ Ces artefacts permettent de relier un comportement observé à des signaux techn
 
 ---
 
-## 1.2. Surveillance continue du comportement des réponses IA
+## 1.2. Suivi du comportement des réponses IA
 
-ControlTower observe en continu des signaux associés au comportement des systèmes d’IA pendant leur fonctionnement.
+NeoMundi observe en continu des signaux associés au comportement des systèmes d’IA pendant leur fonctionnement.
 
 Selon les modules activés et la configuration retenue, ces signaux peuvent inclure :
 
@@ -85,7 +117,7 @@ L’objectif est de rendre observable le moment où le comportement mesuré d’
 
 ## 1.3. Détection des dérives comportementales et des changements de régime silencieux
 
-ControlTower peut aider à identifier des évolutions mesurables du comportement d’un système d’IA dans le temps.
+NeoMundi peut aider à identifier des évolutions mesurables du comportement d’un système d’IA dans le temps.
 
 Un changement comportemental peut apparaître même lorsque :
 
@@ -96,7 +128,7 @@ Un changement comportemental peut apparaître même lorsque :
 
 Ces observations peuvent notamment concerner des évolutions de signaux de risque factuel, de variation sémantique, de stabilité ou d’autres indicateurs suivis.
 
-ControlTower n’attribue pas la cause d’un changement comportemental détecté, sauf lorsqu’une investigation indépendante permet de l’établir.
+NeoMundi n’attribue pas la cause d’un changement comportemental détecté, sauf lorsqu’une investigation indépendante permet de l’établir.
 
 Un signal détecté constitue une observation opérationnelle. Il ne constitue pas, à lui seul, la preuve d’un changement de fournisseur, d’un défaut système, d’un manquement juridique ou d’une cause racine.
 
@@ -108,7 +140,7 @@ Un signal détecté constitue une observation opérationnelle. Il ne constitue p
 
 ## 1.4. Mécanismes configurables de gouvernance et de contrôle
 
-ControlTower peut prendre en charge des mécanismes de gouvernance configurables, appliqués en temps réel ou quasi temps réel selon l’intégration choisie.
+NeoMundi peut prendre en charge des mécanismes de gouvernance configurables, appliqués en temps réel ou quasi temps réel selon l’intégration choisie.
 
 Ces mécanismes peuvent inclure :
 
@@ -121,7 +153,7 @@ Ces mécanismes peuvent inclure :
 * des journaux d’observation et de décision ;
 * l’audit de l’application des règles et de l’historique de mesure.
 
-ControlTower ne transforme pas silencieusement un signal observé en action autorisée.
+NeoMundi ne transforme pas silencieusement un signal observé en action autorisée.
 
 Un signal de mesure peut justifier une information, une revue ou une escalade, mais l’autorité d’agir demeure définie par les règles de gouvernance de l’organisation, les rôles responsables et l’intégration retenue.
 
@@ -133,7 +165,7 @@ Un signal de mesure peut justifier une information, une revue ou une escalade, m
 
 ## 1.5. Support à la supervision humaine
 
-ControlTower peut soutenir la supervision humaine en rendant les signaux pertinents en exploitation visibles et exploitables.
+NeoMundi peut soutenir la supervision humaine en rendant les signaux pertinents en exploitation visibles et exploitables.
 
 Selon la configuration, la plateforme peut aider les organisations à :
 
@@ -154,7 +186,7 @@ La plateforme fournit un support technique à la supervision humaine. Elle ne re
 
 ## 1.6. Auditabilité et preuve en exploitation
 
-ControlTower produit des éléments techniques mesurables et vérifiables pouvant inclure :
+NeoMundi produit des éléments techniques mesurables et vérifiables pouvant inclure :
 
 * des métriques ;
 * des scores ;
@@ -176,11 +208,11 @@ Ces éléments peuvent être utilisés pour soutenir un audit interne, une analy
 
 ## 1.7. Gouvernance opérationnelle fondée sur des preuves
 
-ControlTower ne repose pas uniquement sur une promesse déclarative de fiabilité d’un système d’IA.
+NeoMundi ne repose pas uniquement sur une promesse déclarative de fiabilité d’un système d’IA.
 
 Il fournit des signaux mesurés, traçables et configurables qui peuvent aider les organisations à rendre leurs processus de gouvernance plus explicites.
 
-Par exemple, une organisation peut utiliser ControlTower pour documenter que :
+Par exemple, une organisation peut utiliser NeoMundi pour documenter que :
 
 * une observation a été détectée ;
 * un signal de risque a franchi un seuil configuré ;
@@ -197,7 +229,7 @@ Par exemple, une organisation peut utiliser ControlTower pour documenter que :
 
 # 2. Frontières de protection des données
 
-ControlTower est conçu pour soutenir la minimisation des données, mais NeoMundi comporte plusieurs flux distincts. Ce document ne formule aucune promesse générale de zéro transmission, zéro stockage ou zéro conservation.
+NeoMundi est conçu pour soutenir la minimisation des données, mais NeoMundi comporte plusieurs flux distincts. Ce document ne formule aucune promesse générale de zéro transmission, zéro stockage ou zéro conservation.
 
 Les frontières techniques actuellement examinées sont les suivantes :
 
@@ -225,15 +257,15 @@ Un signal de mesure n'autorise pas à lui seul une action. Les mécanismes de bl
 
 Des modèles de déploiement souverains ou contrôlés peuvent être disponibles selon l'architecture retenue. La localisation des données, les opérateurs, sous-traitants, contrôles d'accès et règles de conservation doivent être documentés pour le déploiement réel ; ils ne se déduisent pas du libellé du déploiement.
 
-# 3. Comment ControlTower peut contribuer à un processus de conformité à l’AI Act européen
+# 3. Comment NeoMundi peut contribuer à un processus de conformité à l’AI Act européen
 
-ControlTower ne remplace ni l’analyse juridique, ni l’évaluation de conformité, ni la gouvernance organisationnelle, ni une certification réglementaire.
+NeoMundi ne remplace ni l’analyse juridique, ni l’évaluation de conformité, ni la gouvernance organisationnelle, ni une certification réglementaire.
 
 Il fournit toutefois des capacités techniques et des preuves en exploitation qui peuvent contribuer à plusieurs domaines opérationnels pertinents dans le cadre d’un processus de conformité à l’AI Act européen.
 
 L’applicabilité de ces domaines dépend du système d’IA concerné, de sa finalité prévue, du rôle de l’organisation, de la classification de risque du système et du cas d’usage spécifique.
 
-| Domaine opérationnel                                | Contribution de ControlTower                                                                                 | Niveau de couverture                           |
+| Domaine opérationnel                                | Contribution de NeoMundi                                                                                 | Niveau de couverture                           |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
 | Surveillance pendant l’exploitation                 | Observation continue du comportement des réponses IA, de leur variabilité et de signaux de risque configurés | Techniquement pris en charge                   |
 | Support à la gestion des risques                    | Scores mesurés, signaux de risque, seuils, alertes et mécanismes d’escalade                                  | Techniquement pris en charge                   |
@@ -253,7 +285,7 @@ L’applicabilité de ces domaines dépend du système d’IA concerné, de sa f
 
 ## 3.1. Preuve en exploitation pour la surveillance post-déploiement
 
-Une contribution centrale de ControlTower réside dans la possibilité de créer un historique longitudinal du comportement observé d’un système d’IA pendant son fonctionnement.
+Une contribution centrale de NeoMundi réside dans la possibilité de créer un historique longitudinal du comportement observé d’un système d’IA pendant son fonctionnement.
 
 Cela peut aider les organisations à identifier :
 
@@ -265,7 +297,7 @@ Cela peut aider les organisations à identifier :
 * des changements de régime silencieux ;
 * des schémas nécessitant une revue avant qu’ils ne deviennent visibles par les processus traditionnels de remontée d’incidents.
 
-ControlTower ne remplace pas une investigation d’incident.
+NeoMundi ne remplace pas une investigation d’incident.
 
 Il aide à établir qu’un signal opérationnel a été observé, mesuré et documenté à un instant donné, dans un contexte défini de mesure et de gouvernance.
 
@@ -273,7 +305,7 @@ Il aide à établir qu’un signal opérationnel a été observé, mesuré et do
 
 ## 3.2. La distinction entre mesure et autorisation
 
-ControlTower est conçu autour d’une distinction de gouvernance essentielle :
+NeoMundi est conçu autour d’une distinction de gouvernance essentielle :
 
 > **Un signal de mesure en exploitation ne constitue pas, à lui seul, une autorisation d’agir.**
 
@@ -292,15 +324,15 @@ Cette distinction contribue à éviter qu’un signal technique observé soit si
 
 ---
 
-# 4. Comment ControlTower peut contribuer à un processus de conformité au RGPD
+# 4. Comment NeoMundi peut contribuer à un processus de conformité au RGPD
 
-ControlTower est conçu pour soutenir des principes de traitement des données *privacy-first*.
+NeoMundi est conçu pour soutenir des principes de traitement des données *privacy-first*.
 
 Il ne remplace ni une analyse complète au regard du RGPD, ni le registre des activités de traitement, ni une analyse d’impact relative à la protection des données, ni la responsabilité juridique du responsable de traitement ou du sous-traitant.
 
 Son architecture peut néanmoins apporter un support technique à plusieurs principes opérationnels liés au RGPD.
 
-| Domaine lié au RGPD                                   | Contribution de ControlTower                                                                                 | Niveau de couverture                |
+| Domaine lié au RGPD                                   | Contribution de NeoMundi                                                                                 | Niveau de couverture                |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------- |
 | Minimisation des données                              | Transmission limitée aux données nécessaires selon le mode et la finalité technique retenus                  | Soutenu par l’architecture          |
 | Protection des données dès la conception              | Certains parcours peuvent minimiser l’exposition ; le traitement et la conservation réels dépendent du déploiement                     | Soutenu par l’architecture          |
@@ -311,15 +343,15 @@ Son architecture peut néanmoins apporter un support technique à plusieurs prin
 | Registre des activités de traitement                  | Document organisationnel et juridique maintenu par le responsable de traitement ou le sous-traitant concerné | Hors périmètre                      |
 | Analyse d’impact relative à la protection des données | Évaluation juridique et organisationnelle réalisée lorsqu’elle est requise                                   | Hors périmètre                      |
 | Détermination de la base légale                       | Dépend du contexte de traitement et de l’analyse juridique de l’organisation                                 | Hors périmètre                      |
-| Gestion des droits des personnes concernées           | Nécessite des procédures et systèmes organisationnels allant au-delà de ControlTower                         | Hors périmètre                      |
+| Gestion des droits des personnes concernées           | Nécessite des procédures et systèmes organisationnels allant au-delà de NeoMundi                         | Hors périmètre                      |
 
 ---
 
-# 5. Ce que ControlTower ne couvre pas
+# 5. Ce que NeoMundi ne couvre pas
 
 NeoMundi ne remplace pas les responsabilités juridiques, organisationnelles, de sécurité ou de gouvernance d’une organisation.
 
-ControlTower ne fournit pas :
+NeoMundi ne fournit pas :
 
 * la classification juridique complète d’un système d’IA au regard de l’AI Act européen ;
 * un conseil juridique ;
@@ -343,7 +375,7 @@ ControlTower ne fournit pas :
 
 # 6. Positionnement résumé
 
-**NeoMundi ControlTower est une couche de preuve en exploitation, de surveillance continue et de traçabilité pour les réponses générées par des systèmes d’IA.**
+**NeoMundi NeoMundi est une couche de preuve en exploitation, de surveillance continue et de traçabilité pour les réponses générées par des systèmes d’IA.**
 
 Il aide les organisations à :
 
@@ -364,7 +396,7 @@ Il fournit la couche de preuve opérationnelle qui aide les organisations à com
 
 # 7. Intégration
 
-ControlTower peut être intégré :
+NeoMundi peut être intégré :
 
 * par un simple appel API ;
 * sans nécessiter de modification de l’infrastructure IA sous-jacente ;
@@ -383,7 +415,7 @@ Les capacités disponibles dépendent du modèle de déploiement sélectionné, 
 
 # 8. Avertissement
 
-Ce document décrit les capacités techniques et la contribution opérationnelle visée par NeoMundi ControlTower.
+Ce document décrit les capacités techniques et la contribution opérationnelle visée par NeoMundi NeoMundi.
 
 Il ne constitue pas :
 
