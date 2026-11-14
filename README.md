@@ -12,7 +12,7 @@
 
 [![Measurement](https://img.shields.io/badge/Measurement-Measure-2563eb?style=flat-square)](https://github.com/neomundi-io/neomundi-runtime-measurement)
 [![Station](https://img.shields.io/badge/Station-Observe-0f766e?style=flat-square)](https://github.com/neomundi-io/neomundi-station-public)
-[![Evidence](https://img.shields.io/badge/Evidence-Verify-D4A545?style=flat-square)](https://github.com/neomundi-io/neomundi-evidence-public)
+[![Evidence](https://img.shields.io/badge/Evidence-Verify-D4A545?style=flat-square)](https://github.com/neomundi-io/neomundi-evidence-gateway)
 [![Use cases](https://img.shields.io/badge/Use_cases-Explore-64748b?style=flat-square)](https://github.com/neomundi-io/neomundi-use-cases)
 
 **[API](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md)** · **[Create an account](https://controltower.neomundi.io/welcome)**
@@ -49,9 +49,9 @@ Organisations need to explain what their AI produced, under what conditions, whi
 |---|---|---|
 | **[Measurement](https://github.com/neomundi-io/neomundi-runtime-measurement)** | Versioned response measurements, status, evaluator coverage and bounded risk signals. | [API quickstart](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md) |
 | **[Station](https://github.com/neomundi-io/neomundi-station-public)** | Observation campaigns, execution context, records, provenance and export. | [Overview](https://github.com/neomundi-io/neomundi-station-public) |
-| **[Evidence](https://github.com/neomundi-io/neomundi-evidence-public)** | Archive-integrity verification, artefact traceability and Ed25519 attestation checks. | [User guide](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_USER_GUIDE.md) · [Demo](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_TECHNICAL_DEMO.md) |
+| **[Evidence](https://github.com/neomundi-io/neomundi-evidence-gateway)** | Archive-integrity verification, artefact traceability and Ed25519 attestation checks. | [User guide](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/verifier/README.md) · [Demo](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/verifier/README.md#verify-our-figures--the-four-commands) |
 
-**Demonstrated:** a real experimental Q-2 qualification traversed Measurement → Station → Evidence, including a verified Ed25519 attestation. Technical checks passed in their tested scope; **overall Q-2 verdict PARTIAL**. Its source dossier is private. See the [Evidence validation report](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_VALIDATION_REPORT.md).
+**Demonstrated:** a real experimental Q-2 qualification traversed Measurement → Station → Evidence, including a verified Ed25519 attestation. Technical checks passed in their tested scope; **overall Q-2 verdict PARTIAL**. **Its source dossier is private and no Q-2 figure is published**, so that qualification cannot be re-verified from outside. What *is* publicly re-verifiable is the verification surface itself — specification, frozen conformance corpus and verifiers: see [what was measured, and against which revision](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/references/VERIFICATION_RESULTS.md) and [what it still does not establish](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/references/LIMITS.md).
 
 ## Where this evidence may help
 
