@@ -12,7 +12,7 @@
 
 [![Measurement](https://img.shields.io/badge/Measurement-Mesurer-2563eb?style=flat-square)](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/README_FR.md)
 [![Station](https://img.shields.io/badge/Station-Observer-0f766e?style=flat-square)](https://github.com/neomundi-io/neomundi-station-public/blob/main/README.fr.md)
-[![Evidence](https://img.shields.io/badge/Evidence-Verifier-D4A545?style=flat-square)](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/README.fr.md)
+[![Evidence](https://img.shields.io/badge/Evidence-Verifier-D4A545?style=flat-square)](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/README.fr.md)
 [![Use cases](https://img.shields.io/badge/Cas_d_usage-Explorer-64748b?style=flat-square)](https://github.com/neomundi-io/neomundi-use-cases/blob/main/README_FR.md)
 
 **[API](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md)** · **[Créer un compte](https://controltower.neomundi.io/welcome)**
@@ -51,9 +51,9 @@ Une organisation doit pouvoir expliquer ce que ses IA ont produit, dans quelles 
 |---|---|---|
 | **[Measurement](https://github.com/neomundi-io/neomundi-runtime-measurement)** | Mesures versionnées des réponses IA, statuts, couverture des évaluateurs et signaux de risque bornés. | [API et première mesure](https://github.com/neomundi-io/neomundi-runtime-measurement/blob/main/QUICKSTART.md) |
 | **[Station](https://github.com/neomundi-io/neomundi-station-public)** | Campagnes d'observation, contexte d'exécution, journalisation, provenance et export des dossiers. | [Présentation](https://github.com/neomundi-io/neomundi-station-public/blob/main/README.fr.md) |
-| **[Evidence](https://github.com/neomundi-io/neomundi-evidence-public)** | Vérification de l'intégrité d'archives, traçabilité des artefacts et contrôle d'attestations Ed25519. | [Mode d'emploi](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_USER_GUIDE.fr.md) · [Démonstration](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_TECHNICAL_DEMO.fr.md) |
+| **[Evidence](https://github.com/neomundi-io/neomundi-evidence-gateway)** | Vérification de l'intégrité d'archives, traçabilité des artefacts et contrôle d'attestations Ed25519. | [Mode d'emploi](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/verifier/README.fr.md) · [Démonstration](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/verifier/README.fr.md#contrôler-nos-chiffres--les-quatre-commandes) |
 
-**Ce qui est démontré :** une qualification expérimentale réelle Q-2 a traversé Measurement → Station → Evidence, avec attestation Ed25519 vérifiée. Verdict technique positif sur les contrôles exécutés ; **verdict global Q-2 PARTIAL**. Le dossier source demeure privé. Voir le [rapport de validation Evidence](https://github.com/neomundi-io/neomundi-evidence-public/blob/main/docs/EVIDENCE_VALIDATION_REPORT.fr.md).
+**Ce qui est démontré :** une qualification expérimentale réelle Q-2 a traversé Measurement → Station → Evidence, avec attestation Ed25519 vérifiée. Verdict technique positif sur les contrôles exécutés ; **verdict global Q-2 PARTIAL**. **Le dossier source demeure privé et aucun chiffre Q-2 n'est publié** : cette qualification n'est donc pas re-vérifiable depuis l'extérieur. Ce qui l'est, en revanche, c'est la surface de vérification elle-même — spécification, corpus de conformité gelé et vérificateurs : voir [ce qui a été mesuré, et contre quelle révision](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/references/VERIFICATION_RESULTS.fr.md) et [ce que cela n'établit toujours pas](https://github.com/neomundi-io/neomundi-evidence-gateway/blob/main/references/LIMITS.fr.md).
 
 ## Où ces preuves peuvent être utiles
 
