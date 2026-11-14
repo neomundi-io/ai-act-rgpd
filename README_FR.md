@@ -21,6 +21,28 @@
 
 ---
 
+> ### Qui exploite NeoMundi, et à quel stade
+>
+> NeoMundi est un **projet de recherche et développement** porté par
+> **NeoMundi Recherche**, **association à but non lucratif régie par la loi
+> du 1er juillet 1901**. Activité actuelle : recherche, développement,
+> expérimentation et pilotes.
+>
+> **Les utilisateurs actuels sont des pilotes, non des clients commerciaux**,
+> et aucune facturation n'est pratiquée à ce jour. Lisez chacune des
+> capacités ci-dessous dans ce cadre : ce document met en regard des
+> obligations et des capacités techniques, il ne constitue pas une offre
+> commerciale.
+>
+> L'identité du responsable de traitement, les traitements effectués, les
+> prestataires réellement utilisés et les règles de conservation sont
+> publiés dans la documentation canonique
+> [Protection des données & confidentialité](https://github.com/neomundi-io/neomundi-io-data-protection).
+> **En cas de divergence, c'est ce dépôt qui prévaut** — celui-ci n'est pas
+> une seconde source.
+
+---
+
 ## Ce que NeoMundi apporte
 
 Une organisation doit pouvoir expliquer ce que ses IA ont produit, dans quelles conditions, quels signaux ont été mesurés et quelles traces sont disponibles pour un contrôle. NeoMundi fournit un socle technique pour répondre à ces questions.
@@ -243,6 +265,16 @@ Transmission, traitement, divulgation et conservation sont des questions distinc
 
 [**Consulter la documentation canonique Protection des données et confidentialité →**](https://github.com/neomundi-io/neomundi-io-data-protection/blob/main/README_FR.md)
 
+⚠ **Ces frontières ont été examinées le 7 novembre 2026, et l'une d'elles a
+changé depuis.** Le **13 novembre 2026**, un garde de sortie a été déployé
+et vérifié sur le service en fonctionnement : l'envoi de contenu à un
+prestataire externe exige désormais une **autorisation nommée et explicite**,
+et non plus la simple présence d'un identifiant. Présenté avec un
+identifiant bien formé pour un prestataire hors liste blanche, le service
+**refuse**. La liste blanche réellement servie, les prestataires concernés et
+les transferts mesurés sont publiés dans le dépôt canonique lié ci-dessus —
+non repris ici, afin qu'il y ait une source et non deux.
+
 ## 2.1. Parcours OBS
 
 OBS est un libellé de couche de mesure, pas une garantie que la charge utile se limite aux métriques. Le parcours REST examiné peut recevoir llm_prompt et llm_response lorsque l'appelant les fournit. D'autres intégrations peuvent soumettre des objets d'exécution réduits, mais les mesures encore disponibles et leur provenance dépendent de la charge utile et du déploiement réels.
@@ -375,7 +407,7 @@ NeoMundi ne fournit pas :
 
 # 6. Positionnement résumé
 
-**NeoMundi NeoMundi est une couche de preuve en exploitation, de surveillance continue et de traçabilité pour les réponses générées par des systèmes d’IA.**
+**NeoMundi est une couche de preuve en exploitation, de surveillance continue et de traçabilité pour les réponses générées par des systèmes d’IA.**
 
 Il aide les organisations à :
 
@@ -415,7 +447,7 @@ Les capacités disponibles dépendent du modèle de déploiement sélectionné, 
 
 # 8. Avertissement
 
-Ce document décrit les capacités techniques et la contribution opérationnelle visée par NeoMundi NeoMundi.
+Ce document décrit les capacités techniques et la contribution opérationnelle visée par NeoMundi.
 
 Il ne constitue pas :
 
